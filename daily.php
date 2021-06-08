@@ -32,13 +32,15 @@
         <input type="date" name="date" id="date">
         <br><br>
         <input type="submit" value="Search 🔎" class="searchbtn">
+        <a href="menu.html" class="menubtn">Menu</a>
         <br><br><br>
     </form>
     <?php 
         if ( $rows == false ) {
             echo "No expense found for the date: $date";
         } else { 
-            echo "Here are the Expenses sorted by the Money you spent";
+            echo "Here's the list of Expenses <br><br>";
+
             echo '<div>';
             echo "<TABLE BORDER='1' ALIGN=\"LEFT\">";
             echo "<TR>";

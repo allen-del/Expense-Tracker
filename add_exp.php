@@ -27,7 +27,7 @@
     <input type="date" name="expdate" required>
     <br><br>
 
-    <label for="expitem"><b>Expense Date</b></label><br>
+    <label for="expitem"><b>Expense Item</b></label><br>
     <input type="text" placeholder="Item Name" name="expitem" required>
     <br><br>
 
@@ -36,8 +36,11 @@
     <br><br>
 
       <button type="submit" class="addbtn">Add</button>
+      <a href="menu.html" class="menubtn">Cancel</a>
 
 </form>
+
+
 		
 </body>
 </html>

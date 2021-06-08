@@ -32,9 +32,13 @@ img{
 }
 
 .addbtn{
-
+    font-size:15px;
     background-color: #4CAF50;
     color:white;
+    border-top-left-radius:2px;
+    border-top-right-radius:2px;
+    border-bottom-left-radius:2px;
+    border-bottom-right-radius:2px
 
 }
 .emoji{
@@ -44,3 +48,24 @@ img{
     background-color: #4813db;
     color:white;
 }
+
+.menubtn{
+    margin: 10px;
+    text-decoration: none;
+    display: inline;
+    font-size:15px;
+    padding: 5px;
+    border-width:1px;
+    color:#ffffff;
+    border-color:#d83526;
+    border-top-left-radius:2px;
+    border-top-right-radius:2px;
+    border-bottom-left-radius:2px;
+    border-bottom-right-radius:2px;
+    background:linear-gradient(#fe1a00, #ce0100);
+  }
+  
+  .buttonClass:hover {
+    background: linear-gradient(#ce0100, #fe1a00);
+  }
+                
