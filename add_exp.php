@@ -1,28 +1,11 @@
 <?php
-session_start();
-error_reporting(0);
-include "./connect.php";
-if (!isset($_SESSION['userid'])) {
+  session_start();
+  error_reporting(0);
+  include "./connect.php";
+  if (!isset($_SESSION['userid'])) {
     echo "<script>alert('Something went wrong. Please try again');</script>";
     header('location:logout.php');
-  } 
-if(isset($_POST['submit']))
-  {
-  	$userid=$_SESSION['userid'];
-    $expdate=$_POST['expdate'];
-    $expitem=$_POST['expitem'];
-    $expspent=$_POST['expspent'];
-    //$query=mysqli_query($mysqli, "INSERT INTO expense(userid,expdate,expitem,expspent) value($userid,'$expdate','$expitem', $expspent)");
-    echo "<script>alert(INSERT INTO expense(userid,expdate,expitem,expspent) value($userid,'$expdate','$expitem', $expspent));</script>";
-    sleep(3);
-if($query){
-header("location:menu.html");
-} else {
-echo "<script>alert('Something went wrong. Please try again');</script>";
-
-}
-  
-}
+  }   
 ?>
 <!DOCTYPE html>
 <html>
