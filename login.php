@@ -16,6 +16,7 @@ $result = mysqli_query($mysqli, $query);
         $_SESSION["userid"] = $row["userid"];
         header("location:menu.html");
       } else {
-        echo "Invalid Username or Password";
+        echo "<script type='text/javascript'>alert(\"Invalid Username or Password!\")</script>";
+        include("index.html");
       }
 ?>

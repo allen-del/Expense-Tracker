@@ -18,10 +18,12 @@
           $_SESSION['uname'] = $username;
           header('location:logout.php');
         } else {
-          echo "Username already taken!";
+          echo "<script type='text/javascript'>alert(\"Username already taken!\")</script>";
+          include("register.html");  
         }
       } else {
-        echo "Password do not match!";
+        echo "<script type='text/javascript'>alert(\"Passwords don't match!\")</script>";
+        include("register.html"); 
       }
     }    
 ?>

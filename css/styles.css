@@ -6,11 +6,13 @@ body{
 img{
     padding-left: 10px;
     display: inline;
-    height: 6.5%;
-    width: 6.5%;
+    height: 7.5%;
+    width: 7.5%;
 }
 
-.loginhead{
+.loginhead{ 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 150%;
     display: inline-block; 
     background-color: #3c415c;
     color: aliceblue;
@@ -24,6 +26,8 @@ img{
 }
 
 .ets{
+    
+    font-size: 100%;
     font-family: 'Noto Serif JP', serif;
 }
 
@@ -32,4 +36,11 @@ img{
     background-color: #4CAF50;
     color:white;
 
+}
+.emoji{
+    text-decoration: none;
+}
+.searchbtn{
+    background-color: #4813db;
+    color:white;
 }

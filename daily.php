@@ -17,24 +17,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Expense</title>
+    <title>Daily Expense Report</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h2>This is the daily expense page</h2>
+<div class="loginhead"><h1 class="ets">Your Expense Tracking System™</h1></div>
+    <h2>Select the Day to view your Spending History for that Day</h2>
+    <hr>
+    
     <form action="./daily.php" method="POST">
         <label for="date">Select the date:</label>
+        <br><br>
         <input type="date" name="date" id="date">
-        <input type="submit" value="Search">
+        <br><br>
+        <input type="submit" value="Search 🔎" class="searchbtn">
+        <br><br><br>
     </form>
     <?php 
         if ( $rows == false ) {
-            echo "No expense found for the date $date";
+            echo "No expense found for the date: $date";
         } else { 
             echo '<div>';
             echo "<TABLE BORDER='1' ALIGN=\"LEFT\">";
             echo "<TR>";
-            echo "<TD>Item</TD>";
-            echo "<TD>Spent</TD>";
+            echo "<TH>&nbsp;Item&nbsp;</TH>";
+            echo "<TH>&nbsp;Amount&nbsp;</TH>";
             echo "</TR>";
             while ( $row = mysqli_fetch_array($result) ) {
                 echo "<TR>";
