@@ -5,7 +5,7 @@
     if (!isset($_POST["submit"])) {
         $date = $_POST["date"];
 
-        $q = "SELECT * FROM expense WHERE userid = '" . $_SESSION["userid"] . "' AND expdate = '$date'";
+        $q = "SELECT * FROM expense WHERE userid = '" . $_SESSION["userid"] . "' AND expdate = '$date' ORDER BY expspent DESC";
         $result = mysqli_query($mysqli, $q);
         $rows = mysqli_num_rows($result);
     }
@@ -38,14 +38,17 @@
         if ( $rows == false ) {
             echo "No expense found for the date: $date";
         } else { 
+            echo "Here are the Expenses sorted by the Money you spent";
             echo '<div>';
             echo "<TABLE BORDER='1' ALIGN=\"LEFT\">";
             echo "<TR>";
+            echo "<TH>&nbsp;Date of Spending&nbsp;</TH>";
             echo "<TH>&nbsp;Item&nbsp;</TH>";
             echo "<TH>&nbsp;Amount&nbsp;</TH>";
             echo "</TR>";
             while ( $row = mysqli_fetch_array($result) ) {
                 echo "<TR>";
+                echo "<TD>".$row['expdate']."</TD>";
                 echo "<TD>".$row['expitem']."</TD>";
                 echo "<TD>".$row['expspent']."</TD>";
                 echo "</TR>";
