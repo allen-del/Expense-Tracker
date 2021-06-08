@@ -12,7 +12,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Add Expenses- Expense Tracking System</title>
+	<title>Add Expenses-Expense Tracking System</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
 	

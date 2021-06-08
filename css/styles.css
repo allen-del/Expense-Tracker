@@ -43,6 +43,8 @@ img{
 }
 .emoji{
     text-decoration: none;
+    font-size:40px;
+
 }
 .searchbtn{
     background-color: #4813db;
@@ -68,4 +70,26 @@ img{
   .buttonClass:hover {
     background: linear-gradient(#ce0100, #fe1a00);
   }
-                
+               
+.pfp{
+    padding-top: 10px;
+
+}
+.userdata{
+    margin-left: 10px;
+}
+.passbtn{
+    margin: 10px;
+    text-decoration: none;
+    display: inline;
+    font-size:15px;
+    padding: 5px;
+    border-width:30px;
+    color:#ffffff;
+    border-color:#0c926a;
+    border-top-left-radius:2px;
+    border-top-right-radius:2px;
+    border-bottom-left-radius:2px;
+    border-bottom-right-radius:2px;
+    background:linear-gradient(#10aa62, #0e6338);
+}
