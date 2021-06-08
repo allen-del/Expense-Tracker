@@ -23,7 +23,7 @@
 </head>
 <body>
 <div class="loginhead"><h1 class="ets">Your Expense Tracking System™</h1></div>
-    <h2>Select the Day to view your Spending History for that Day</h2>
+    <h2>Daily Expense Report</h2>
     <hr>
     
     <form action="./daily.php" method="POST">

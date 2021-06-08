@@ -29,17 +29,17 @@
 </head>
 <body>
 <div class="loginhead"><h1 class="ets">Your Expense Tracking System™</h1></div>
-    <h2>Select the Month to view your Spending History for that Day</h2>
+    <h2>Monthly Expense Report</h2>
     <hr>
     
     <form action="./monthly.php" method="POST">
-        <label for="month">Select the Month:</label>
+        <label for="month">Month:</label>
         <br><br>
-        <input type="number" min="01" max="12" id="month" name="month"> 
+        <input type="number" placeholder="Month from 01 to 12" min="01" max="12" id="month" name="month"> 
         <br><br><br>
         <label for="year">Select the Year:</label>
         <br><br>
-        <input type="number" min="1990" max="2021" id="year" name="year"> 
+        <input type="number" placeholder="Year" min="1990" max="2021" id="year" name="year"> 
         <br><br>
         <input type="submit" value="Search 🔎" class="searchbtn">
         <a href="menu.html" class="menubtn">Menu</a>
@@ -47,7 +47,7 @@
     </form>
     <?php 
         if ( $rows == false ) {
-            echo "No expense found for the given Month and Year: $date";
+            echo "No expense found for the given Month and Year";
         } else { 
             echo "Here's the list of Expenses <br><br>";
             echo '<div>';
