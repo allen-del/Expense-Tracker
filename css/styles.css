@@ -1,0 +1,35 @@
+body{
+    background-color: #231e23;
+    color:white;
+}
+
+img{
+    padding-left: 10px;
+    display: inline;
+    height: 6.5%;
+    width: 6.5%;
+}
+
+.loginhead{
+    display: inline-block; 
+    background-color: #3c415c;
+    color: aliceblue;
+    position: relative;
+    width: 100%;
+    padding: 10px 10px;
+}
+.createacc{
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.ets{
+    font-family: 'Noto Serif JP', serif;
+}
+
+.addbtn{
+
+    background-color: #4CAF50;
+    color:white;
+
+}
