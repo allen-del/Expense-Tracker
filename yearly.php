@@ -3,9 +3,9 @@
     session_start();;
     if (!isset($_SESSION["userid"])) header("location:index.html");
     if (!isset($_POST["submit"])) {
-        $year = $_POST["year"];
+        $year = (int)$_POST["year"];
 
-        $q1 = "SELECT * FROM expense WHERE userid = '" . $_SESSION["userid"] . "' AND expdate LIKE '$year%' ORDER BY expdate";
+        $q1 = "SELECT * FROM expense WHERE userid = " . $_SESSION["userid"] . " AND expdate LIKE '$year%' ORDER BY expdate";
         $result = mysqli_query($mysqli, $q1);
         $rows = mysqli_num_rows($result);
     }
@@ -44,7 +44,7 @@
             echo "<TABLE BORDER='1' ALIGN=\"LEFT\">";
             echo "<TR>";
             echo "<TH>&nbsp;Date of Spending&nbsp;</TH>";
-            echo "<TH>&nbsp;Item&nbsp;</TH>";
+            echo "<TH>&nbsp;Item/Service&emsp;</TH>";
             echo "<TH>&nbsp;Amount&nbsp;</TH>";
             echo "</TR>";
             while ( $row = mysqli_fetch_array($result) ) {

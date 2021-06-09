@@ -1,35 +1,39 @@
 <?php
     include "./connect.php";
     session_start();
-    error_reporting(0);
     $q = "SELECT password FROM users WHERE userid = '" . $_SESSION["userid"] ;
     $curr_pass=md5($_POST["cpass"]);
     $password = $_POST["pass"];
     $confirmPassword = $_POST["pass_repeat"];
     $result = mysqli_query($mysqli, $q);
-    if($result==$curr_pass){
-        if ( $password == $confirmPassword ) {
+    $storedPassword=mysqli_fetch_array($result);
+    if($result==$curr_pass)
+    {
+        if ( $storedPassword == $confirmPassword ) 
+        {
             $password = md5($password);    
             $query = "UPDATE users SET `password`= $password WHERE userid = '". $_SESSION["userid"];
         
-        if ( mysqli_query($mysqli, $query) ) {
-            echo "<script type='text/javascript'>alert(\"Password Changed!\")</script>";
-            header('register.html');
-          } else {
+            if ( mysqli_query($mysqli, $query) ) {
+              echo "<script type='text/javascript'>alert(\"Password Changed!\")</script>";
+              header('register.html');}
+            else {
             echo "<script type='text/javascript'>alert(\"Unknown Error occured! Try Again!\")</script>";
-            include("change_pass.php");  
-          }
+            include("change_pass.php");}
         }
-        else {
+        else 
+        {
             echo "<script type='text/javascript'>alert(\"Passwords don't match!\")</script>";
             include("change_pass.php"); 
         }
-    }else{
+    }
+    else
+    {
         echo "<script type='text/javascript'>alert(\"Wrong Password! Try Again!\")</script>";
         include("change_pass.php");
-
     }
     ?>
+
 
 
     <!DOCTYPE html>

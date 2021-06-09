@@ -54,7 +54,7 @@
             echo "<TABLE BORDER='1' ALIGN=\"LEFT\">";
             echo "<TR>";
             echo "<TH>&nbsp;Date of Spending&nbsp;</TH>";
-            echo "<TH>&nbsp;Item&nbsp;</TH>";
+            echo "<TH>&nbsp;Item/Service&emsp;</TH>";
             echo "<TH>&nbsp;Amount&nbsp;</TH>";
             echo "</TR>";
             while ( $row = mysqli_fetch_array($result) ) {
