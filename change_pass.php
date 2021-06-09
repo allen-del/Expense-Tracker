@@ -1,7 +1,7 @@
 <?php
     include "./connect.php";
     session_start();
-    $q = "SELECT password FROM users WHERE userid = '" . $_SESSION["userid"] ;
+    $q = "SELECT password FROM users WHERE userid =" . $_SESSION["userid"];
 
     $curr_pass=md5($_POST["cpass"]);
 
@@ -11,19 +11,22 @@
     $result = mysqli_query($mysqli, $q);
     $storedPassword=mysqli_fetch_array($result);
 
-    if($result['password']==$curr_pass)
+    if (isset($_POST["submit"]))
     {
-        if ( $storedPassword == $confirmPassword ) 
+
+    if($storedPassword['password']==$curr_pass)
+    {
+        if ( $password == $confirmPassword ) 
         {
             $password = md5($password);    
-            $query = "UPDATE users SET `password`= $password WHERE userid = '". $_SESSION["userid"];
+            $query = "UPDATE users SET `password`= $password WHERE userid =". $_SESSION["userid"];
         
             if ( mysqli_query($mysqli, $query) ) {
               echo "<script type='text/javascript'>alert(\"Password Changed!\")</script>";
-              include("logout.php");}
+              include("menu.html");}
             else {
-            echo "<script type='text/javascript'>alert(\"Unknown Error occured! Try Again!\")</script>";
-            include("change_pass.php");}
+                echo "<script type='text/javascript'>alert(\"Unknown Error occured! Try Again!\")</script>";
+                 include("change_pass.php");}
         }
         else 
         {
@@ -35,6 +38,7 @@
     {
         echo "<script type='text/javascript'>alert(\"Wrong Password! Try Again!\")</script>";
         include("change_pass.php");
+    }
     }
     ?>
 
@@ -51,9 +55,10 @@
     <body>
     <div class="loginhead"><h1 class="ets">Your Expense Tracking System™</h1></div>
     <form action="./change_pass.php" method="POST">
-    <h1>C</h1>
+    <h1>Password Reset</h1>
     <h3 class="createacc">Change Password</h3>
     <hr>
+    <br>
 
     <label for="cpass"><b>Current Password</b></label><br>
     <input type="password" placeholder="Enter Current Password" name="cpass" required>
@@ -68,10 +73,10 @@
     <br>
     <br>
 
-      <button type="submit" class="signupbtn">Continue</button>
+      <button style="font-size: 15px;" type="submit" class="signupbtn">Continue</button>
+      <a href="menu.html" class="menubtn">Return to Menu</a>
 
 </form>
-<a href="menu.html" class="menubtn">Return to Menu</a>
     
 </body>
 </html>
