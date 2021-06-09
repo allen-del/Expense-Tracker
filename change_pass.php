@@ -39,7 +39,14 @@
         echo "<script type='text/javascript'>alert(\"Wrong Password! Try Again!\")</script>";
         include("change_pass.php");
     }
+
+
     }
+
+    else {
+        echo "<script type='text/javascript'>alert(\"Unknown Error occured! Try Again!\")</script>";
+         include("change_pass.php");}
+
     ?>
 
     <!DOCTYPE html>
